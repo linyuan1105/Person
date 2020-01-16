@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>bootstrap</title>
+		<link rel="stylesheet" type="text/css" href="bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="bootstrap.css"/>
+	</head>
+	<body>
+		<div id="progress" class="progress">
+		  <div id="progressBar" class="bar"></div>
+		</div>
+		<div id="">
+			<ul class="nav nav-tabs">
+			  <li class="dropdown">
+			    <a class="dropdown-toggle"
+			       data-toggle="dropdown"
+			       href="#">
+			        项目
+			        <b class="caret"></b>
+			      </a>
+			    <ul class="dropdown-menu" style="border-radius: 20px;">
+					<button class="btn btn-large btn-block" style="border-radius: 20px;" type="button" onclick="vueCheek()">路由</button>
+					<button class="btn btn-large btn-block" style="border-radius: 20px;" type="button" onclick="shoppingCheek()">商城</button>
+					<button class="btn btn-large btn-block" style="border-radius: 20px;" type="button" onclick="oppoCheek()">oppo</button>
+			    </ul>
+			  </li>
+			</ul>
+		</div>
+		<div id="">
+			<form class="form-search" onsubmit="return false">
+			  <input type="text" class="input-medium search-query" placeholder="目前只提供oppo、vue" id="inputForm">
+			  <button type="button" class="btn" onclick="
+			  function select(){
+			  	if(value == 'oppo'){
+					oppoCheek()
+				}
+				if(value == 'vue'){
+					shoppingCheek()
+				}
+				else{
+					alert('无搜索内容')
+				}
+			  }
+			  var input = document.getElementById('inputForm');
+			  var value = input.value;
+			  if(value == ''){
+				  alert('输入搜索内容')
+			  }
+			  else{
+				  select();
+			  }
+			  ">Search</button>
+			</form>
+		</div>
+		<div id="">
+			<ul class="thumbnails">
+			  <li class="span4">
+			    <div class="thumbnail">
+			      <!-- <img src="../Img/牦牛.jpg" alt="kkk"> -->
+			      <h3>Thumbnail label</h3>
+			      <p>Thumbnail caption...</p>
+			    </div>
+			  </li>
+			</ul>
+		</div>
+		<div class="hero-unit">
+		  <h1 id="projectName">项目细节</h1>
+		  <p id="projectDetails">在项目栏目</p>
+		  <p>
+		    <a class="btn btn-primary btn-large">
+		      Learn more
+		    </a>
+		  </p>
+		</div>
+		<div id="">
+			<nav class="navbar navbar-default navbar-fixed-bottom">
+			  <div class="container">
+			    <a href="">关于本站</a>
+				<a href="">使用信息</a>
+				<a href="">版权所有</a>
+			  </div>
+			</nav>
+		</div>
+		<script src="bootstrap.js" type="text/javascript" charset="utf-8"></script>
+		<script src="http://code.jquery.com/jquery.js"></script>
+		<script src="bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

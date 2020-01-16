@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+
+    <div id="app">
+      <h1>Routers</h1>
+      <p>
+        <!-- 使用 router-link 组件来导航. -->
+        <!-- 通过传入 `to` 属性指定链接. -->
+        <!-- <router-link> 默认会被渲染成一个 `<a>` 标签 -->
+        <router-link to="/foo">Go to Foo</router-link></br>
+        <router-link to="/bar">Go to Bar</router-link></br>
+        <router-link to="/home">Go to home</router-link></br>
+        <router-link to="/user/bar">Go to userBar</router-link></br>
+        <router-link to="/user/foo">Go to userFoo</router-link></br>
+        <router-link to="*">符号*</router-link></br>
+
+      </p>
+      <!-- 路由出口 -->
+      <!-- 路由匹配到的组件将渲染在这里 -->
+      <router-view></router-view>
+    </div>
+    <script type="text/javascript">
+
+      // 0. 如果使用模块化机制编程，导入Vue和VueRouter，要调用 Vue.use(VueRouter)
+
+      // 1. 定义 (路由) 组件。
+      // 可以从其他文件 import 进来
+      const Foo = { template: '<div>\
+      <h1>test templat Foo 模块</h1>\
+      </div>' };
+      const Bar = { template: '<div>\
+      <h1>test templat Bar 模块</h1>\
+      </div>' };
+      const Home = { template: '<div>\
+      <h1>test templat home 模块</h1>\
+      <p>此模块可以参考import的方法来做，在这里展示没有采用这样的路由方式</p>\
+      </div>' };
+      const User = {
+        template: '<div>\
+        <h2>动态改变浏览器的路由:</h2>\
+        <p>{{ $route.params.id }}</p>\
+        </div>',
+        //watch 可以监听路有变化，同时可以加入事件处理
+        /*watch: {
+            '$route' (to, from) {
+              // 对路由变化作出响应...
+              window.alert('路由改变')//此处不需要执行，路由会立即产生变化
+            }
+          }*/
+          beforeRouteUpdate (to, from, next) {
+            window.alert('路由开始变化');//
+            next();//执行next后路由才会改变，如不执行，则路由不改变，只产生提示部分
+              // react to route changes...
+              // don't forget to call next()
+            }
+      }
+      // 2. 定义路由
+      // 每个路由应该映射一个组件。 其中"component" 可以是
+      // 通过 Vue.extend() 创建的组件构造器，
+      // 或者，只是一个组件配置对象。
+      // 我们晚点再讨论嵌套路由。
+      const routes = [
+        { path: '*' },//*匹配所有的路径
+        { path: '/foo', component: Foo },
+        { path: '/bar', component: Bar },
+        { path: '/home', component: Home },
+        { path: '/user/:id', component: User }
+
+      ]
+
+      // 3. 创建 router 实例，然后传 `routes` 配置
+      // 你还可以传别的配置参数, 不过先这么简单着吧。
+      const router = new VueRouter({
+        routes // (缩写) 相当于 routes: routes
+      })
+
+      // 4. 创建和挂载根实例。
+      // 记得要通过 router 配置参数注入路由，
+      // 从而让整个应用都有路由功能
+      new Vue({
+        el:'#app',
+        router
+      })
+
+      // 现在，应用已经启动了！
+    </script>
+	</body>
+</html>

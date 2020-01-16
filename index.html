@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>bootstrap</title>
+		<link rel="stylesheet" type="text/css" href="bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="bootstrap.css"/>
+	</head>
+	<body>
+		<div id="progress" class="progress">
+		  <div id="progressBar" class="bar"></div>
+		</div>
+		<div id="">
+			<ul class="nav nav-tabs">
+			  <li class="dropdown">
+			    <a class="dropdown-toggle"
+			       data-toggle="dropdown"
+			       href="#">
+			        项目
+			        <b class="caret"></b>
+			      </a>
+			    <ul class="dropdown-menu" style="border-radius: 20px;">
+					<button class="btn btn-large btn-block" style="border-radius: 20px;" type="button" onclick="vueCheek()">路由</button>
+					<button class="btn btn-large btn-block" style="border-radius: 20px;" type="button" onclick="shoppingCheek()">商城</button>
+					<button class="btn btn-large btn-block" style="border-radius: 20px;" type="button" onclick="oppoCheek()">oppo</button>
+			    </ul>
+			  </li>
+			</ul>
+		</div>
+		<div id="">
+			<form class="form-search">
+			  <input type="text" class="input-medium search-query">
+			  <button type="submit" class="btn">Search</button>
+			</form>
+		</div>
+		<div id="">
+			<ul class="thumbnails" >
+			  <li class="span4">
+			    <div class="thumbnail" >
+			      <img src="./Img/牦牛.jpg" alt="">
+			      <h3 style="color: white;">说明</h3>
+			        <p style="color: white;">
+					  <ol style="color: gray;">
+					  	<li>在项目列表选择项目</li>
+						<li>选择后详细信息会在本处显示</li>
+						<li>vue商城项目会通过链接的方式获取；下载后使用npm命令即可查看</li>
+					  </ol>
+					</p>
+			    </div>
+			  </li>
+			</ul>
+		</div>
+		<div class="hero-unit">
+		  <h1 id="projectName">项目细节</h1>
+		  <p id="projectDetails">详细信息</p>
+		  <p>
+		    <a class="btn btn-primary btn-large">
+		      Learn more
+		    </a>
+		  </p>
+		</div>
+		<div id="">
+			<nav class="navbar navbar-default navbar-fixed-bottom">
+			  <div class="container">
+			    <a href="">QQ 邮 箱:673609957@qq.com</a>
+				<a href="">电话号码:18811786170</a>
+				<a href="">版权所有</a>
+			  </div>
+			</nav>
+		</div>
+		<script src="bootstrap.js" type="text/javascript" charset="utf-8"></script>
+		<script src="http://code.jquery.com/jquery.js"></script>
+		<script src="bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

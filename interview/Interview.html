@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>面试总结</title>
+		<link rel="stylesheet" type="text/css" href="xiangmu/interview.css"/>
+	</head>
+	<body>
+		<div id="box">
+			<div id="Title">
+				<h1>Interview Summary</h1>
+			</div>
+			<div id="Interview">
+				<ol>
+					<li>HTML的离线存储</li>
+					<p>localStorage  长期存储数据，浏览器关闭后数据不丢失</p>
+					<p>seesionStorage  数据在浏览器关闭后自己删除</p></br>
+					<li>eval是做什么的</li>
+					<p>把对应的字符串解析成js代码并运行</p>
+					<p>实际过程中避免使用eval：耗能(一次解析，一次执行)</p></br>
+					<li>JS如何实现继承</li>
+					<p>通过原型和构造器</p></br>
+					<li>事件处理机制</li>
+					<p>IE是事件冒泡</p>
+					<p>火狐是事件捕获</p>
+					<p>我们可以通过ev.stopPropagation来阻止事件冒泡</p></br>
+					<li>new操作符干了啥？</li>
+					<p>创建一个空对象，同时继承了该函数的原型</p>
+					<p>属性和方法被加入到this引用的对象中</p>
+					<p>改变this的指向，最后隐式返回this</p></br>
+					<li>Javascript中，有一个函数，执行时对象查找时，永远不会去查找原型，这个函数是？</li>
+					<p> hasOwnProperty,所以很多时候采用这个函数进行深拷贝，从而消除对原型的影响</p></br>
+					<li>JS延迟加载的方式?</li>
+					<p>defer和async、动态创建DOM方式（用得最多）、按需异步载入js</p></br>
+					<li>如何解决跨域问题题？</li>
+					<p>jsonp、 iframe、window.name、window.postMessage、服务器上设置代理页面</p></br><br />
+					<li>.call和.apply的区别</li>
+					<p>两者均改变this的指向，第一个参数是this所指向的对象</p>
+					<p>call()传参必须逐个列举；apply以数组的方式进行传参。<a href="https://blog.csdn.net/mandyucan/article/details/80820139">点击查看</a></p><br />
+					
+					<li>你有哪些性能优化的方法？</li>
+					<p>(1) 减少http请求次数：CSS Sprites, JS、CSS源码压缩、图片大小控制合适；网页Gzip，CDN托管，data缓存 ，图片服务器。<br/>
+					  （2）前端模板 JS+数据，减少由于HTML标签导致的带宽浪费，前端用变量保存AJAX请求结果，每次操作本地变量，不用请求，减少请求次数<br />
+					  （3）用innerHTML代替DOM操作，减少DOM操作次数，优化javascript性能。<br/>
+					  （4）当需要设置的样式很多时设置className而不是直接操作style。<br/>
+					  （5）少用全局变量、缓存DOM节点查找的结果。减少IO读取操作。<br/>
+					  （6）避免使用CSS Expression（css表达式)又称Dynamic properties(动态属性)。<br/>
+					  （7）图片预加载，将样式表放在顶部，将脚本放在底部  加上时间戳。<br/>
+					  （8）避免在页面的主体布局中使用table，table要等其中的内容完全下载之后才会显示出来，显示比div+css布局慢。<br/>
+					<li>http状态码有哪些？分别代表什么意思？</li>
+					<p>    100-199 用于指定客户端应相应的某些动作。
+</p>
+					<p>    200-299 用于表示请求成功。
+</p>
+					<p>    300-399 用于已经移动的文件并且常被包含在定位头信息中指定新的地址信息。
+</p>
+					<p>    400-499 用于指出客户端的错误。400    1、语义有误，当前请求无法被服务器理解。401    当前请求需要用户验证 403    服务器已经理解请求，但是拒绝执行它。
+</p>
+					<p>    500-599 用于支持服务器错误。 503 – 服务不可用
+</p>
+				</ol>
+			</div>
+			<div id="Demonstrate">
+				Demonstrate
+			</div>
+			<div id="fixed">
+				浮动窗口设计位置
+			</div>
+		</div>
+		<script src="interview.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>
